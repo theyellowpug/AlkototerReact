@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import LogoImg from '../../assets/LogoImg.png'
 import SearchImg from '../../assets/searchImg.png'
+import CartImg from '../../assets/CartImg.png'
 
 export default function Navbar(props) {  
 
@@ -24,7 +25,7 @@ export default function Navbar(props) {
                 <RightContainer>
                     <NavbarButton>Belépés</NavbarButton>
                     <NavbarButton>Regisztráció</NavbarButton>  
-                    <NavbarFavorites src={LogoImg}></NavbarFavorites> 
+                    <NavbarFavorites src={CartImg}></NavbarFavorites> 
                     <HamburgerButton onClick={()=>{setExtendedNavbar(!extendedNavbar)}}>
                         {
                             extendedNavbar ? <>&#10005;</> : <>&#8801;</>
@@ -54,10 +55,10 @@ export default function Navbar(props) {
 
 const NavbarContainer = styled.nav`
     width: 100%;
-    height: 15vh;
+    height: 13vh;
     position: sticky;
     position: -webkit-sticky;
-    top: -7.5vh;
+   // top: -7.5vh;
     box-shadow: 0 1px 1px #8fa0ba;
     overflow: hidden;
 
@@ -101,18 +102,18 @@ const RightContainer = styled.div`
 
 const NavbarUpperContainer = styled.div`
     width: 100%;
-    height: 65%;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
 
     @media (orientation: portrait){
-        height: 15vh;
+        height: 13vh;
     }
 `
 
 const NavbarLowerContainer = styled.div`
     width: 100%;
-    height: 35%;
+    height: 3vh;
     display: flex; 
     background-color: #FFFFFF;  
     justify-content: center;
@@ -129,14 +130,11 @@ const ExtendedHamburgerContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center; 
-
-    /*@media (orientation: landscape){
-        display: none;
-    }*/
 `
 
 const LinkContainer = styled.div`
     display: flex;
+    height: 20%;
 
     @media (orientation: portrait){
         display: none;
@@ -144,7 +142,7 @@ const LinkContainer = styled.div`
 `
 const NavbarLink = styled(Link)`
     color:#5B7B7A;
-    margin: 2vh;
+    margin-inline: 2vh;
     font-size: 2.5vh;
     text-decoration: none;
     &:hover {
@@ -163,9 +161,12 @@ const NavbarLogo = styled.img`
 
 const NavbarFavorites = styled.img`
     margin: 1vh;
-    height: 4vh;
+    height: 60%;
     width: auto;
     align-self: center;
+    padding-top: 1vh;
+    margin: 1vh;
+    cursor:pointer;
     @media (orientation: portrait){
         display: none;
     }
@@ -211,7 +212,7 @@ const NavbarButton = styled.button`
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
     display: block;
-    font-size: 2vh;
+    font-size: 2.2vh;
     text-align: center;
     padding-top: 0.5vh;
     margin: 1vh;
