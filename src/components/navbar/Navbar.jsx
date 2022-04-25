@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import LogoImg from '../../assets/LogoImg.png'
 import SearchImg from '../../assets/searchImg.png'
 import CartImg from '../../assets/CartImg.png'
+import CartDotImg from '../../assets/CartDotImg.png'
 
 export default function Navbar(props) {  
 
    const [extendedNavbar, setExtendedNavbar] = useState(false);
+   const [itemsInCart, setItemsInCart] = useState([1, 23 ,4]);
 
     return(
         <NavbarContainer extendedNavbar={extendedNavbar}>
@@ -24,8 +26,15 @@ export default function Navbar(props) {
                 </MiddleContainer>
                 <RightContainer>
                     <NavbarButton>Belépés</NavbarButton>
-                    <NavbarButton>Regisztráció</NavbarButton>  
-                    <NavbarFavorites src={CartImg}></NavbarFavorites> 
+                    <NavbarButton>Regisztráció</NavbarButton>
+                    <NavbarCartContainer>
+                        <NavbarCartImg src={CartImg} numberOfItemsInCart={itemsInCart.length}></NavbarCartImg>
+                        {(itemsInCart.length > 0) ?
+                        <NavbarCartBadge>{itemsInCart.length}</NavbarCartBadge> 
+                        : 
+                        <></>
+                    }
+                    </NavbarCartContainer>  
                     <HamburgerButton onClick={()=>{setExtendedNavbar(!extendedNavbar)}}>
                         {
                             extendedNavbar ? <>&#10005;</> : <>&#8801;</>
@@ -58,7 +67,7 @@ const NavbarContainer = styled.nav`
     height: 13vh;
     position: sticky;
     position: -webkit-sticky;
-   // top: -7.5vh;
+    top: -7.5vh;
     box-shadow: 0 1px 1px #8fa0ba;
     overflow: hidden;
 
@@ -158,15 +167,43 @@ const NavbarLogo = styled.img`
     margin-left: 1.5vh;
     margin-right: 1.5vh;
 `
-
-const NavbarFavorites = styled.img`
+const NavbarCartContainer = styled.div`
+    background-color: #FEF9F8;
+    display: flexbox;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+`
+const NavbarCartImg = styled.img`
     margin: 1vh;
-    height: 60%;
+    height: 6vh;
     width: auto;
+    display: block;
     align-self: center;
     padding-top: 1vh;
     margin: 1vh;
     cursor:pointer;
+    @media (orientation: portrait){
+        display: none;
+    }
+`
+
+const NavbarCartBadge = styled.div`
+    position: absolute;
+    top: 1vh;
+    left: 4.2vh;
+    width: 3vh;
+    height: 3vh;
+    background: red;
+    color: #FEF9F8;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24.5vh;
+    font-size: 2vh;
+
     @media (orientation: portrait){
         display: none;
     }
