@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import LogoImg from '../../assets/LogoImg.png'
 import SearchImg from '../../assets/searchImg.png'
 import CartImg from '../../assets/CartImg.png'
-import CartDotImg from '../../assets/CartDotImg.png'
 
 export default function Navbar(props) {  
 
@@ -157,7 +156,6 @@ const NavbarLink = styled(Link)`
     &:hover {
     color: #EA8C55;
     }
-  
 `
 
 const NavbarLogo = styled.img`
@@ -223,7 +221,6 @@ const NavbarTitle = styled.p`
     @media (orientation: portrait){
         display: none;
     }
-
 `
 
 const HamburgerButton = styled.button`
