@@ -14,7 +14,7 @@ export default function LandingPage() {
             </SwiperSlide>)
     return(
         <PageContainer>
-            <CategoriesContainer cards={createCategoryCardsFromMap}/>
+            <CategoriesContainer title={"Kategóiák"} height={40} width={85} cards={createCategoryCardsFromMap}/>
         </PageContainer>
     )
 } 
