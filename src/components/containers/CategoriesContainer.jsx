@@ -1,36 +1,50 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Swiper } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Lazy, FreeMode } from 'swiper';
 import styled from 'styled-components';
-import Slider from 'react-slick'
-import '../../ReactSlick.css'
+
+import 'swiper/css';
+
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 
 export default function CategoriesContainer({cards}) {
-    const responsiveSettings = {
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 7,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        pauseOnHover: true,
-        lazyLoad: true
-  }
+
     return(
         <MainContainer>
             <TitleContainer>
                 <Title>Kategóriák</Title>
             </TitleContainer>
-            {cards ?
-                <SliderContainer>
-                    <Slider {...responsiveSettings}>           
-                        {cards}
-                    </Slider>
-                </SliderContainer>
-                :
-                <p>Loading</p> 
-            }
-      </MainContainer>
+            <SliderContainer>
+                <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y, Lazy, FreeMode]}
+                spaceBetween={0}
+                slidesPerView={7}
+                pagination={{ clickable: true }}
+                freeMode={true}
+                loop={true}
+                lazy={true}
+                breakpoints={{
+                    "@0.00": {
+                      slidesPerView: 2
+                    },
+                    "@0.60": {
+                      slidesPerView: 3,
+                    },
+                    "@1.00": {
+                      slidesPerView: 4
+                    },
+                    "@1.50": {
+                      slidesPerView: 6
+                    }
+                  }}
+                >
+                    {cards}
+                </Swiper>
+            </SliderContainer>
+        </MainContainer>            
     )
 }  
 
@@ -64,7 +78,7 @@ const Title = styled.p`
 
 const SliderContainer = styled.div`
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 `

@@ -13,6 +13,18 @@ const categoriesMap = [
     {"title":"category10", "img":PlaceholderImg},
     {"title":"category11", "img":PlaceholderImg},
     {"title":"category12", "img":PlaceholderImg},
+    {"title":"category13", "img":PlaceholderImg},
+    {"title":"category14", "img":PlaceholderImg},
+    {"title":"category15", "img":PlaceholderImg},
+    {"title":"category16", "img":PlaceholderImg},
+    {"title":"category17", "img":PlaceholderImg},
+    {"title":"category18", "img":PlaceholderImg},
+    {"title":"category19", "img":PlaceholderImg},
+    {"title":"category20", "img":PlaceholderImg},
+    {"title":"category21", "img":PlaceholderImg},
+    {"title":"category22", "img":PlaceholderImg},
+    {"title":"category23", "img":PlaceholderImg},
+    {"title":"category24", "img":PlaceholderImg},
 ]
 
 export {
