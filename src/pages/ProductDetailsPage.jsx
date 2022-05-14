@@ -13,18 +13,9 @@ export default function ProductDetailsPage(props) {
     },[])
     
     return(
-        <PageContainer>
+        <>
             <p>{productId}</p>
             <ProductDetailsCard/>
-        </PageContainer>
+        </>
     )
-} 
-
-const PageContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #FEF9F8;
-    align-items: center;
-`
+}

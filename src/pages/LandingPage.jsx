@@ -13,17 +13,6 @@ export default function LandingPage() {
                 <MainCategoryCard className={"MainCategoryCard"+index} cardTitle={category.title} cardImg={category.img} />
             </SwiperSlide>)
     return(
-        <PageContainer>
-            <CategoriesContainer title={"Kategóiák"} height={40} width={85} cards={createCategoryCardsFromMap}/>
-        </PageContainer>
+        <CategoriesContainer title={"Kategóiák"} height={40} width={85} cards={createCategoryCardsFromMap}/>
     )
 } 
-
-const PageContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #FEF9F8;
-    align-items: center;
-`

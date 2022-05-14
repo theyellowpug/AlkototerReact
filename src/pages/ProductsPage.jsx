@@ -19,7 +19,6 @@ export default function ProductsPage() {
     },[])
 
     return(
-        <PageContainer>
             <CardContainer>
             {
                 isLoaded ?
@@ -29,18 +28,8 @@ export default function ProductsPage() {
 
             }
             </CardContainer>
-        </PageContainer>
     )
 } 
-
-const PageContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #FEF9F8;
-    align-items: center;
-`
 
 const CardContainer = styled.div`
     width: 100%;
