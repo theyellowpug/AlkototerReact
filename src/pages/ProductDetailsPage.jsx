@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { getProductById } from '../apis/ProductApi';
 import { useParams } from "react-router-dom";
+import ProductDetailsCard from '../components/cards/ProductDetailsCard';
 
 export default function ProductDetailsPage(props) {
 
@@ -13,8 +14,8 @@ export default function ProductDetailsPage(props) {
     
     return(
         <PageContainer>
-            <h1>ProductdetailsPage</h1>
             <p>{productId}</p>
+            <ProductDetailsCard/>
         </PageContainer>
     )
 } 
