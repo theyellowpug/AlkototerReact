@@ -8,8 +8,8 @@ const getProductsByProductType = async (productType, numberOfPages, numberOfProd
     return await axios.get(BASE_URL + URL_PREFIX + "byProductType?productType="+productType+"&numberOfPages="+numberOfPages+"&numberOfProducts="+numberOfProducts);
 }
 
-const getProductById = async (clientId) => {
-    return await axios.get(BASE_URL + URL_PREFIX + "?id=" + clientId);
+const getProductById = async (productId) => {
+    return await axios.get(BASE_URL + URL_PREFIX + "?id=" + productId);
 }
 
 const getProductsByClientId = async (clientId) => {

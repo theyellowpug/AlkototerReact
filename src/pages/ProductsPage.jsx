@@ -22,7 +22,7 @@ export default function ProductsPage() {
             <CardContainer>
             {
                 isLoaded ?
-                    allProducts.map(product=><ProductCard key={product.id} cardId={product.id} cardTitle={product.name} cardImg={PlaceholderImg} cardPrice={product.price}/>)
+                    allProducts.map(product=><ProductCard key={product.id} cardId={product.id} cardSize={25} cardTitle={product.name} cardImg={PlaceholderImg} cardPrice={product.price}/>)
                 :
                 <h1>Loading placeholder</h1> //todo: Loading icon
 

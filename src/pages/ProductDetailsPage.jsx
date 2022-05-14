@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { getProductById } from '../apis/ProductApi';
 import { useParams } from "react-router-dom";
@@ -8,8 +8,11 @@ export default function ProductDetailsPage(props) {
 
     const {productId}= useParams()
 
+    const [product, setProduct] = useState()
+
     useEffect(()=>{
-        getProductById(productId).then(response=>console.log(response.data))
+        getProductById(productId)
+            .then(response=>setProduct(response.data))
     },[])
     
     return(

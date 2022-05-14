@@ -12,27 +12,27 @@ export default function ProductCard({cardSize,cardId,cardTitle,cardPrice,cardImg
     }
     
     return(
-    <CardContainer onClick={forwardToDetailsPage}>
-        <CardImgContainer className="mainCardItem">
+    <CardContainer cardSize={cardSize} onClick={forwardToDetailsPage}>
+        <CardImgContainer cardSize={cardSize} className="mainCardItem">
             <CardImg src={cardImg} />
         </CardImgContainer>
-        <CardTextContainer>
-            <CardTitle className="mainCardItem">{cardTitle}</CardTitle>
-            <CardPrice className="mainCardItem">{cardPrice} Ft</CardPrice>
+        <CardTextContainer cardSize={cardSize}>
+            <CardTitle cardSize={cardSize} className="mainCardItem">{cardTitle}</CardTitle>
+            <CardPrice cardSize={cardSize} className="mainCardItem">{cardPrice} Ft</CardPrice>
         </CardTextContainer>
     </CardContainer>)
 } 
 
 const CardContainer = styled.div`
-    height: 20vh;
-    width: 15vh;
+    height: ${props => props.cardSize}vh;
+    width: ${props => props.cardSize/1.3}vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2vh;
+    margin-bottom: ${props => props.cardSize/13}vh;
     border-color: #5B7B7A;
     border: 1.2px solid;
-    border-radius: 30px;
+    border-radius: ${props => props.cardSize/6.5}vh;
     box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
     box-sizing: border-box;
     cursor: pointer;
@@ -42,32 +42,37 @@ const CardContainer = styled.div`
 `
 
 const CardImgContainer = styled.div`
-    width: 10vh;
-    height: 15vh;
+    width: 100%;
+    height: ${props => props.cardSize/1.4}vh;
     display: flex;
     justify-content: center;
+    margin-bottom: ${props => props.cardSize/26}vh;
 `
-const CardImg = styled.img``
-  
+const CardImg = styled.img`
+    size :100%;
+    border-top-left-radius: ${props => props.cardSize/6.5}vh;
+    border-top-right-radius: ${props => props.cardSize/6.5}vh;
+    box-sizing: border-box;
+`  
 
 const CardTextContainer = styled.div`
     width: 100%;
-    height: 5vh;
+    height: ${props => props.cardSize/5.2}vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 `
 
 const CardTitle = styled.div`
-    font-size: 2vh;
+    font-size: ${props => props.cardSize/13}vh;
     color: #5B7B7A;
     justify-self: center;
     text-align: center;
 `
 const CardPrice = styled.div`
-    font-size: 1.5vh;
+    font-size: ${props => props.cardSize/17}vh;
     color: #5B7B7A;
     justify-self: center;
     text-align: center;
-    padding-bottom: 1vh; 
+    padding-bottom: ${props => props.cardSize/26}vh; 
 `

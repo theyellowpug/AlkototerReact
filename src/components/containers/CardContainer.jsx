@@ -12,7 +12,7 @@ import 'swiper/css/scrollbar';
 import '../../Swiper.css'
 
 //** width = %, height = vh, every component is scaled based on height*/
-export default function CategoriesContainer({title,height,width,cards}) {
+export default function CardContainer({title,height,width,cards}) {
 
     return(
         <MainContainer size={height} width={width}>
