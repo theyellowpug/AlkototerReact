@@ -23,7 +23,7 @@ export default function CardContainer({title,height,width,cards}) {
                 <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Lazy, FreeMode]}
                 spaceBetween={0}
-                slidesPerView={7}
+                slidesPerView={7} //almost complately irrelevant, depends on the breakpoints
                 pagination={{ clickable: true }}
                 freeMode={true}
                 loop={true}
@@ -43,7 +43,10 @@ export default function CardContainer({title,height,width,cards}) {
                     },
                     "@1.50": {
                         slidesPerView: 7
-                      }
+                      },
+                    "@1.75": {
+                    slidesPerView: 8
+                    }
                   }}
                 >
                     {cards}
