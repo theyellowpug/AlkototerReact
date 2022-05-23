@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components';
 import heartImg from '../assets/heartImg.png';
+import { useState } from 'react';
 
 export default function AddToFavs() {
-  return (
+
+    const [favorited, setFavorited] = useState(false);
+    const [favoritedCounter, setFavoritedCounter] = useState(1);
+
+    return (
     <Container>
         <LargeButton><span style={Grow}>Kedvenc</span><Heart src={heartImg}></Heart></LargeButton>
-        <Num>1</Num>
+        <Num>{favoritedCounter}</Num>
     </Container>
   )
 }
@@ -52,6 +57,25 @@ const LargeButton = styled.div`
         cursor: pointer;
     }
 `;
+
+const RemoveButton = styled.div`
+    width: 140px;
+    height: 25px;
+    text-align: center;
+    color: #7b605b;
+    background: #fef8f8;
+    border: 1.2px solid #5B7B7A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover{
+        cursor: pointer;
+    }
+`;
+
 const Heart = styled.img`
     height: 70%;
     margin-right: 9px;

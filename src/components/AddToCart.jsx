@@ -1,12 +1,32 @@
 import React from 'react'
 import styled from 'styled-components';
+import { useState } from 'react';
 
 export default function AddToCart() {
+
+    const [multipleAvailable, setMultipleAvailable] = useState(10);  // ** x=0 - unique product | x!=0 - available products **
+    const [orderAmount, setOrderAmount] = useState(1);
+
+    function increment() {
+        if(multipleAvailable != 0)              // ** 
+        { if(orderAmount < multipleAvailable)   // **
+            setOrderAmount(orderAmount + 1);
+        }
+    }
+
+    function decrement() {
+        if(multipleAvailable != 0)              // ** 
+        { if(orderAmount >= 2)                  // **
+            {       setOrderAmount(orderAmount - 1); }
+            else {  setOrderAmount(1); }        // szimpla > / >= ellenőrzéssel bugos
+        }
+    }
+
   return (
     <Container>
-        <SmallButton>-</SmallButton>
-        <SmallNum>1</SmallNum>
-        <SmallButton>+</SmallButton>
+        <SmallButton onClick={decrement}>-</SmallButton>
+        <SmallNum>{orderAmount}</SmallNum>
+        <SmallButton onClick={increment}>+</SmallButton>
         <LargeButton>Kosárba</LargeButton>
     </Container>
   )
@@ -17,7 +37,7 @@ const Container = styled.div`
     display: flex;
     align-items: baseline;
 `;
-const SmallButton = styled.div`
+const SmallButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
