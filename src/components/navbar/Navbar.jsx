@@ -121,7 +121,7 @@ const NavbarUpperContainer = styled.div`
 
 const NavbarLowerContainer = styled.div`
     width: 100%;
-    height: 3vh;
+    height: 5vh;
     display: flex; 
     background-color: #FFFFFF;  
     justify-content: center;
@@ -236,21 +236,22 @@ const HamburgerButton = styled.button`
     }
 `
 const NavbarButton = styled.button`
-    width: 18vh;
-    height: 50%;
+    width: 15vh;
+    height: 38%;
     background-color: #FFFFFF;
     color: #5B7B7A;
     border-color: #5B7B7A;
     border: 1.2px solid;
     border-radius: 24.5vh;
     box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0.05, 0.30);
     display: block;
     font-size: 2.2vh;
     text-align: center;
     padding-top: 0.5vh;
     margin: 1vh;
     cursor:pointer;
+    align-self: flex-end;
     &:hover {
     color: #EA8C55;
     }
@@ -269,7 +270,7 @@ const NavbarSearchbarContainer = styled.div`
     border: 1.2px solid;
     border-radius:24.5vh;
     box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0.05, 0.30);
     display: flex;
     padding-top: 1px;
     flex-direction: row;

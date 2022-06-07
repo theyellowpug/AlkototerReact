@@ -62,7 +62,7 @@ const MainContainer = styled.div`
     margin: ${props => props.size/8}vh;
     border-radius: ${props => props.size/10}vh;
     box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0.05, 0.30);
     justify-content: start;
 `
 
