@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainCategoryCard from '../components/cards/MainCategoryCard';
-import LatestNewsCard from '../components/cards/LatestNewsCard';
-import Introduction from '../components/cards/Introduction';
+import IntroductionPanel from '../components/cards/IntroductionPanel';
 import CategoriesContainer from '../components/containers/CategoriesContainer';
+import PopularProductContainer from '../components/containers/PopularProductContainer';
 import { categoriesMap } from '../utils/MainCategoires'
 import { SwiperSlide } from 'swiper/react';
 
@@ -16,9 +16,14 @@ export default function LandingPage() {
             </SwiperSlide>)
     return(
         <React.Fragment>
-            <LatestNewsCard height={40} width={85}></LatestNewsCard>
-            <Introduction></Introduction>
+            <Spacer/>
+            <IntroductionPanel/>
+            <PopularProductContainer/>
             <CategoriesContainer title={"Kategóiák"} height={40} width={85} cards={createCategoryCardsFromMap}/>
         </React.Fragment>
     )
 } 
+
+const Spacer = styled.div`
+    height: 4vh;
+`;

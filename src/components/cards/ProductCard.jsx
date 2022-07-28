@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom"
 
-export default function ProductCard({cardSize,cardId,cardTitle,cardPrice,cardImg}) {
+export default function ProductCard({cardId,cardTitle,cardPrice,cardImg}) {
 
     const navigate = useNavigate();
 
@@ -24,13 +24,17 @@ export default function ProductCard({cardSize,cardId,cardTitle,cardPrice,cardImg
 } 
 
 const CardContainer = styled.div`
-    height: 20vh;
-    width: 15vh;
+    height: 26vh;
+    width: 20vh;
+    margin: 2.5vh;
+    margin-bottom: 0;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2vh;
     border-color: #5B7B7A;
+    background-color: white;
     border: 1.2px solid;
     border-radius: 30px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0.25);
@@ -42,10 +46,11 @@ const CardContainer = styled.div`
 `
 
 const CardImgContainer = styled.div`
-    width: 10vh;
-    height: 15vh;
+    width: 70%;
+    height: 70%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 `
 const CardImg = styled.img``
   
