@@ -6,6 +6,7 @@ import CategoriesContainer from '../components/containers/CategoriesContainer';
 import PopularProductContainer from '../components/containers/PopularProductContainer';
 import { categoriesMap } from '../utils/MainCategoires'
 import { SwiperSlide } from 'swiper/react';
+import BecomeCreator from '../components/cards/BecomeCreator';
 
 export default function LandingPage() {
 
@@ -19,6 +20,7 @@ export default function LandingPage() {
             <Spacer/>
             <IntroductionPanel/>
             <PopularProductContainer/>
+            <BecomeCreator/>
             <CategoriesContainer title={"Kategóiák"} height={40} width={85} cards={createCategoryCardsFromMap}/>
         </React.Fragment>
     )
