@@ -16,6 +16,7 @@ export default function BecomeCreator() {
 
 const Container = styled.div`
     margin-top: 40px;
+    margin-bottom: 40px;
     width: 600px;
     height: 200px;
     background-color: white;
